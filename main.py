@@ -23,7 +23,7 @@ options=webdriver.FirefoxOptions()
 options.add_argument("--lang=fr")
 options.add_argument("--headless")
 
-driver=webdriver.Firefox(options=options)
+driver=webdriver.Firefox(options=options,executable_path="/home/appuser/venv/bin/geckodriver")
 
 
 filename=st.file_uploader("Upload a picture",type=["png","jpg"])
