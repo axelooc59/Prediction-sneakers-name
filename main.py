@@ -1,5 +1,6 @@
 import streamlit as st
 import os, sys
+from webdriver_manager.firefox import GeckoDriverManager
 
 @st.experimental_singleton
 def installff():
@@ -23,7 +24,7 @@ options=webdriver.FirefoxOptions()
 options.add_argument("--lang=fr")
 options.add_argument("--headless")
 
-driver=webdriver.Firefox(options=options,executable_path="/home/appuser/venv/bin/geckodriver")
+driver=webdriver.Firefox(options=options,executable_path=GeckoDriverManager().install())
 
 
 filename=st.file_uploader("Upload a picture",type=["png","jpg"])
