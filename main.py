@@ -4,13 +4,13 @@ import os, sys
 @st.experimental_singleton
 def installff():
   os.system('sbase install geckodriver')
-  os.system('ln -s /home/appuser/venv/lib/python3.7/site-packages/seleniumbase/drivers/geckodriver /home/appuser/venv/bin/geckodriver')
+  os.system('ln -s /home/appuser/venv/lib/python3.9/site-packages/seleniumbase/drivers/geckodriver /home/appuser/venv/bin/geckodriver')
 
 _ = installff()
 from PIL import Image
 st.title("Sneakers prediction name")
 st.markdown("##### Using reverse search google image engine")
-st.write("find the code on my github [link](https://github.com/axelooc59/Prediction-sneakers-name)")
+st.write("find the code on my github [here](https://github.com/axelooc59/Prediction-sneakers-name)")
 
 from selenium.webdriver.common.by import By
 import requests
