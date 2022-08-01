@@ -50,7 +50,7 @@ if st.button('Find name'):
         new_name=name +" site:stockx.com"
         print(new_name)
         driver.execute_script(f"document.getElementsByTagName('input')[0].setAttribute('value','{new_name}')") # add filter on site:stockx.com
-        driver.find_element(By.ID,"L2AGLb").click()
+        #driver.find_element(By.ID,"L2AGLb").click()#click cookies
         driver.find_element(By.CLASS_NAME,"zgAlFc").click() #click search button 
 
         res=driver.find_element(By.TAG_NAME,"h3")
