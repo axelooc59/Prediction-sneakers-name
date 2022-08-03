@@ -1,13 +1,10 @@
 import streamlit as st
 import os, sys
-from webdriver_manager.firefox import GeckoDriverManager
 
-@st.experimental_singleton
-def installff():
-  os.system('sbase install geckodriver')
-  os.system('ln -s /home/appuser/venv/lib/python3.9/site-packages/seleniumbase/drivers/geckodriver /home/appuser/venv/bin/geckodriver')
 
-_ = installff()
+
+
+
 from PIL import Image
 st.title("Sneakers prediction name")
 st.markdown("##### Using reverse search google image engine")
@@ -17,14 +14,14 @@ from selenium.webdriver.common.by import By
 import requests
 
 from selenium import webdriver
+from selenium.webdriver.firefox.options import Options
 
-
-
+options = Options()
 options=webdriver.FirefoxOptions() 
 options.add_argument("--lang=fr")
 options.add_argument("--headless")
 
-driver=webdriver.Firefox(options=options,executable_path=GeckoDriverManager().install())
+driver=webdriver.Firefox(options=options,executable_path="geckodriver.exe")
 
 
 filename=st.file_uploader("Upload a picture",type=["png","jpg"])
@@ -49,8 +46,8 @@ if st.button('Find name'):
         name=input.get_attribute("value")
         new_name=name +" site:stockx.com"
         print(new_name)
-        driver.execute_script(f"document.getElementsByTagName('input')[0].setAttribute('value','{new_name}')") # add filter on site:stockx.com
-        #driver.find_element(By.ID,"L2AGLb").click()#click cookies
+        driver.execute_script(f"document.getElementsByTagName('input')[0].setAttribute('value','{new_name}')") # add filter  site:stockx.com
+        driver.find_element(By.ID,"L2AGLb").click()#click cookies
         driver.find_element(By.CLASS_NAME,"zgAlFc").click() #click search button 
 
         res=driver.find_element(By.TAG_NAME,"h3")
