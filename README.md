@@ -6,9 +6,9 @@ Predicting sneakers name by using google search image
 ---
 ### **How to Setup ?** 
 
-Download main.py and requirements.txt
+**Download main.py and requirements.txt**
 
- Install dependecies, open a terminal and go to the project folder using command *cd*
+ **Install dependencies**, open a terminal and go to the project folder using command *cd*
 > pip install -r requirements.txt'
 
 **Get firefox driver (needed for selenium)**:  
